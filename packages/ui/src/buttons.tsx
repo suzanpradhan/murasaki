@@ -45,57 +45,75 @@ export const Button = ({
   isLoading = false,
   ...props
 }: ButtonProps) => {
-  let buttonClassname;
+  const styles = {
+    variants: {
+      destructive:
+        "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90",
+      ghost: "hover:bg-accent hover:text-accent-foreground",
+      link: "text-primary underline-offset-4 hover:underline",
+      outline:
+        "border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground",
+      secondary:
+        "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
+      default: "bg-primary text-primary-foreground shadow hover:bg-primary/90",
+    },
+    sizes: {
+      icon: "h-9 w-9",
+      lg: "h-10 rounded-md px-8",
+      sm: "h-8 rounded-md px-3 text-xs",
+      default: "h-9 px-4 py-2",
+    },
+  };
 
-  switch (variant) {
-    case "destructive":
-      buttonClassname =
-        "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90";
-      break;
+  // switch (variant) {
+  //   case "destructive":
+  //     buttonClassname =
+  //       "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90";
+  //     break;
 
-    case "ghost":
-      buttonClassname = "hover:bg-accent hover:text-accent-foreground";
-      break;
+  //   case "ghost":
+  //     buttonClassname = "hover:bg-accent hover:text-accent-foreground";
+  //     break;
 
-    case "link":
-      buttonClassname = "text-primary underline-offset-4 hover:underline";
-      break;
+  //   case "link":
+  //     buttonClassname = "text-primary underline-offset-4 hover:underline";
+  //     break;
 
-    case "outline":
-      buttonClassname =
-        "border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground";
-      break;
+  //   case "outline":
+  //     buttonClassname =
+  //       "border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground";
+  //     break;
 
-    case "secondary":
-      buttonClassname =
-        "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80";
-      break;
+  //   case "secondary":
+  //     buttonClassname =
+  //       "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80";
+  //     break;
 
-    default:
-      buttonClassname =
-        "bg-primary text-primary-foreground shadow hover:bg-primary/90";
+  //   default:
+  //     buttonClassname =
+  //       "bg-primary text-primary-foreground shadow hover:bg-primary/90";
 
-      break;
-  }
+  //     break;
+  // }
 
-  switch (size) {
-    case "icon":
-      buttonClassname = buttonClassname + " " + "h-9 w-9";
-      break;
+  // switch (size) {
+  //   case "icon":
+  //     buttonClassname = buttonClassname + " " + "h-9 w-9";
+  //     break;
 
-    case "lg":
-      buttonClassname = buttonClassname + " " + "h-10 rounded-md px-8";
-      break;
+  //   case "lg":
+  //     buttonClassname = buttonClassname + " " + "h-10 rounded-md px-8";
+  //     break;
 
-    case "sm":
-      buttonClassname = buttonClassname + " " + "h-8 rounded-md px-3 text-xs";
-      break;
+  //   case "sm":
+  //     buttonClassname = buttonClassname + " " + "h-8 rounded-md px-3 text-xs";
+  //     break;
 
-    default:
-      buttonClassname = buttonClassname + " " + "h-9 px-4 py-2";
+  //   default:
+  //     buttonClassname = buttonClassname + " " + "h-9 px-4 py-2";
 
-      break;
-  }
+  //     break;
+  // }
 
   if (variant === "link" && href) {
     return (
@@ -106,6 +124,8 @@ export const Button = ({
       </Link>
     );
   }
+
+  const buttonClassname = `${styles.variants[variant]} ${styles.sizes[size]} ${props.className ?? ""}`;
   return (
     <button
       className={buttonClassname + " " + (props.className ?? "")}

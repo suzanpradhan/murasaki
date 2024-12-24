@@ -21,9 +21,9 @@ const SideBarNavLink = ({
   useEffect(() => {
     console.log(pathName, link);
     if (linkExact) {
-      setToggle(pathName == link ? true : false);
+      setToggle(!!(pathName == link));
     } else {
-      setToggle(pathName.startsWith(link) ? true : false);
+      setToggle(!!pathName.startsWith(link));
     }
   }, [pathName, setToggle, link, linkExact]);
 
