@@ -1,7 +1,9 @@
-import "./globals.css";
 import "@repo/ui/styles.css";
+import clsx from "clsx";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import MainLayout from "./(components)/MainLayout";
+import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,7 +19,9 @@ export default function RootLayout({
 }): JSX.Element {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={clsx(inter.className, "text-black")}>
+        <MainLayout>{children}</MainLayout>
+      </body>
     </html>
   );
 }
