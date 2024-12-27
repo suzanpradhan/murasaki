@@ -5,6 +5,7 @@ import { SideBarNavGroup } from "@repo/ui/sidebar";
 import Link from "next/link";
 import React, { useState } from "react";
 import SideBarNavLink from "../../../../../packages/ui/src/sidebar/SideBarNavLink";
+import ThemeToggleButton from "./ThemeToggleButton";
 
 export default function MainLayout({
   children,
@@ -12,7 +13,7 @@ export default function MainLayout({
   children: React.ReactNode;
 }) {
   const [toggle, setToggle] = useState(true);
-
+  
   return (
     <main className="relative flex flex-col overflow-hidden h-svh">
       <AppBar
@@ -28,7 +29,10 @@ export default function MainLayout({
             </div>
           </Link>
         }
-      ></AppBar>
+      >
+        <div></div>
+        <ThemeToggleButton />
+      </AppBar>
       <div className="flex-1 gap-2 overflow-hidden flex">
         <div
           className={`bg-blue-950 min-w-[15rem] flex flex-col px-2 py-4 left-0 absolute top-[3.25rem] h-full overflow-y-auto custom-scrollbar `}
@@ -45,7 +49,7 @@ export default function MainLayout({
         </div>
         <div
           className={
-            `bg-white p-6 h-full flex-1 transition duration-200 ease-in-out absolute top-[3.25rem] max-lg:w-full left-[15.5rem] overflow-y-auto custom-scrollbar ` +
+            `bg-background text-foreground p-6 h-full flex-1 transition duration-200 ease-in-out absolute top-[3.25rem] max-lg:w-full left-[15.5rem] overflow-y-auto custom-scrollbar ` +
             (toggle ? "max-lg:-translate-x-[15.5rem]" : "")
           }
         >

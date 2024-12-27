@@ -4,6 +4,7 @@ export interface AppBarProps {
   leading?: React.ReactNode;
   children?: React.ReactNode;
   hasSideBar?: boolean;
+  isDarkTheme?: boolean;
   onSideBarToggle?: () => void;
 }
 
@@ -11,6 +12,7 @@ export const AppBar = ({
   leading,
   children,
   hasSideBar = true,
+  isDarkTheme = false,
   onSideBarToggle,
 }: AppBarProps) => {
   return (
@@ -30,7 +32,9 @@ export const AppBar = ({
           )}
           {leading}
         </div>
-        <div className="max-w-[160]px flex gap-2">{children}</div>
+        <div className="max-w-[160]px flex gap-2">
+          {children}
+        </div>
       </div>
     </div>
   );
