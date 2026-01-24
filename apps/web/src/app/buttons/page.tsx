@@ -1,4 +1,5 @@
 import { Button } from "@repo/ui/buttons";
+import { CustomButton, TextField } from "@repo/ui";
 import ComponentDisplay from "../(components)/ComponentDisplay";
 
 export default function Page() {
@@ -11,6 +12,12 @@ export default function Page() {
         kinds of content in a button, such as text or an image, or you can
         restyle a button to give it a new look
       </p>
+
+      <TextField
+        label="Text Field"
+        placeholder="Enter text here"
+        className="rounded-sm" id={"example-input"}        
+      />
 
       <ComponentDisplay
         label="A Simple Button"
@@ -29,10 +36,12 @@ export default function Page() {
       <ComponentDisplay
         label="A Outlined Button"
         component={
-          <Button
-            variant="outline"
-            label="Button Label"
+          <CustomButton
+            // variant="outline"
+            // label="Button Label"
             className="rounded-sm"
+            buttonType="bordered"
+            text="Zenlots Button"
           />
         }
       />
