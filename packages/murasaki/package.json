@@ -1,5 +1,5 @@
 {
-  "name": "@repo/zenlots",
+  "name": "@repo/murasaki",
   "version": "0.0.0",
   "sideEffects": [
     "**/*.css"
@@ -15,7 +15,7 @@
   "scripts": {
     "build": "tailwindcss -i ./src/styles.css -o ./dist/index.css",
     "lint": "eslint src/",
-    "dev": "echo 'No dev script available for zenlots package'",
+    "dev": "echo 'No dev script available for murasaki package'",
     "type-check": "tsc --noEmit"
   },
   "peerDependencies": {
