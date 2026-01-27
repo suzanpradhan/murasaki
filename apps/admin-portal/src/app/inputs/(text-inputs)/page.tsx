@@ -1,5 +1,6 @@
 import { Inputs } from "@repo/ui/inputs";
 import ComponentDisplay from "../../(components)/ComponentDisplay";
+ import { TextField } from "@repo/murasaki";
 
 export default function Page() {
   return (
@@ -14,6 +15,8 @@ export default function Page() {
         copying and pasting text. It also has spell checking capabilities build
         in and enabled by default.
       </p>
+
+      <TextField id="zenlots" />
 
       <ComponentDisplay
         label="A Simple Input Field"

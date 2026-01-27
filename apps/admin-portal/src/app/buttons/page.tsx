@@ -1,5 +1,5 @@
 import { Button } from "@repo/ui/buttons";
-import { CustomButton, TextField } from "@repo/ui";
+import { CustomButton, TextField } from "@repo/murasaki";
 import ComponentDisplay from "../(components)/ComponentDisplay";
 
 export default function Page() {
