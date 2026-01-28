@@ -37,11 +37,10 @@ export default function Page() {
         label="A Outlined Button"
         component={
           <CustomButton
-            // variant="outline"
-            // label="Button Label"
-            className="rounded-sm"
-            buttonType="bordered"
+            kind="danger"
+            type="button"
             text="Zenlots Button"
+            className="px-4 py-2"
           />
         }
       />

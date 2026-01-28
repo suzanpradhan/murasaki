@@ -29,6 +29,7 @@ export default function MainLayout({
           </Link>
         }
       ></AppBar>
+
       <div className="flex-1 gap-2 overflow-hidden flex">
         <div
           className={`bg-blue-950 min-w-[15rem] flex flex-col px-2 py-4 left-0 absolute top-[3.25rem] h-full overflow-y-auto custom-scrollbar `}
