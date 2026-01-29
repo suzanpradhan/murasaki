@@ -89,8 +89,8 @@ const ServerAttachment = ({
 }) => {
   const pathname = usePathname();
 
-  var filePathSplit = serverFile.url.split('/');
-  var fileName = filePathSplit[filePathSplit.length - 1];
+  const filePathSplit = serverFile.url.split('/');
+  const fileName = filePathSplit[filePathSplit.length - 1];
 
   return (
     <div
@@ -183,7 +183,7 @@ const MultiUploader = (props: MultiUploaderType) => {
               file={file}
               onRemove={() => {
                 if (props.files) {
-                  var currentFiles = Array.from(props.files);
+                  const currentFiles = Array.from(props.files);
                   const index = currentFiles.indexOf(file);
                   if (index > -1) {
                     currentFiles.splice(index, 1);

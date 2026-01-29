@@ -26,7 +26,7 @@ export interface ButtonProps {
 }
 
 const CustomButton = ({ buttonType = 'flat', kind, ...props }: ButtonProps) => {
-  var color = 'bg-accentBlue-400 text-white';
+  let color = 'bg-accentBlue-400 text-white';
 
   if (buttonType == 'bordered') {
     color = 'bg-transparent text-dark-500 ';

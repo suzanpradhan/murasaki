@@ -22,8 +22,6 @@ const SideBarNavGroup = ({
     setToggle(!!pathName.startsWith("/" + segment));
   }, [pathName, setToggle, segment]);
 
-  console.log(toggle);
-
   return (
     <div
       className={
